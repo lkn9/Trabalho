@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "trabalho.h"
@@ -12,7 +13,7 @@ int main() {
 
     // Carregar dados do arquivo CSV
     printf("Carregando dados do arquivo 'processo_043_202409032338.csv'...\n");
-    if (!ler_csv("processo_043_202409032338.csv", processos, &tamanho)) {
+    if (!carregarProcessosDoArquivo("processo_043_202409032338.csv", processos, &tamanho)) {
         printf("Erro ao ler o arquivo CSV.\n");
         return 1;
     }
@@ -40,38 +41,38 @@ int main() {
         switch (opcao) {
             case 1:
                 printf("Ordenando por ID em ordem crescente...\n");
-                IdCrescente(processos, tamanho);
-                salvar_csv("processosOrdenadosId.csv", processos, tamanho);
+                ordenarProcessosPorId(processos, tamanho);
+                salvarProcessosEmArquivo("processosOrdenadosId.csv", processos, tamanho);
                 break;
 
             case 2:
                 printf("Ordenando por data em ordem decrescente...\n");
-                dataDecrescente(processos, tamanho);
-                salvar_csv("processosOrdenadosData.csv", processos, tamanho);
+                ordenarPorDataAjuizamento(processos, tamanho);
+                salvarProcessosEmArquivo("processosOrdenadosData.csv", processos, tamanho);
                 break;
 
             case 3: {
                 int id_classe;
                 printf("Digite o ID da classe para contagem: ");
                 scanf("%d", &id_classe);
-                int total = contar_por_classe(processos, tamanho, id_classe);
+                int total = contarProcessosClasse(processos, tamanho, id_classe);
                 printf("Total de processos com ID de classe %d: %d\n", id_classe, total);
                 break;
             }
 
             case 4:
                 printf("Identificando assuntos únicos...\n");
-                listarIdAssuntosUnicos(processos, tamanho);
+                mostrarAssuntosUnicos(processos, tamanho);
                 break;
 
             case 5:
                 printf("Listando processos com múltiplos assuntos...\n");
-                listar_processos_multiplos_assuntos(processos, tamanho);
+                exibirProcessosMultiplosAssuntos(processos, tamanho);
                 break;
 
             case 6:
                 printf("Calculando dias em tramitação...\n");
-                dias_em_tramitacao(processos, tamanho);
+                calcularTempoTramitacao(processos, tamanho);
                 break;
 
             case 0:
@@ -89,6 +90,9 @@ int main() {
         }
 
     } while (opcao != 0);
+
+    return 0;
+}
 
     return 0;
 }
