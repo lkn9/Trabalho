@@ -1,7 +1,4 @@
 
-Built by https://www.blackbox.ai
-
----
 
 # Análise de Processos da Justiça Eleitoral
 
