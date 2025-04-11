@@ -86,10 +86,3 @@ O projeto não possui dependências externas específicas além do compilador C 
 - **listar_processos_multiplos_assuntos()**: Listagem de processos com múltiplos assuntos.
 - **dias_em_tramitacao()**: Cálculo da quantidade de dias em tramitação para cada processo.
 
-## Contribuição
-
-Sinta-se à vontade para contribuir com o projeto! Você pode relatar problemas, sugerir melhorias ou enviar pull requests.
-
-## Licença
-
-Este projeto está licenciado sob a MIT License - consulte o arquivo `LICENSE` para mais detalhes.
