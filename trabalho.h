@@ -12,31 +12,31 @@ typedef struct {
     int EleicaoAno;
 } Processo;
 
-// Função para ler dados do arquivo CSV
-int ler_csv(const char *nome_arquivo, Processo *processo, int *tamanho);
+// Carrega processos de um arquivo CSV
+int carregarProcessosDoArquivo(const char *nome_arquivo, Processo *processo, int *tamanho);
 
-// 1. Função para ordenar por ID em ordem crescente
-void IdCrescente(Processo *processos, int qtd);
+// Ordena processos por ID em ordem crescente
+void ordenarProcessosPorId(Processo *processos, int qtd);
 
-// 2. Função para ordenar por data em ordem decrescente
-void dataDecrescente(Processo *vetor, int tamanho);
+// Ordena processos por data de ajuizamento em ordem decrescente
+void ordenarPorDataAjuizamento(Processo *vetor, int tamanho);
 
-// 3. Função para contar processos por classe
-int contar_por_classe(Processo *lista, int tamanho, int id_classe);
+// Conta quantidade de processos de uma determinada classe
+int contarProcessosClasse(Processo *lista, int tamanho, int id_classe);
 
-// 4. Função para listar assuntos únicos
-void listarIdAssuntosUnicos(Processo *vetor, int tamanho);
+// Exibe lista de assuntos únicos e suas quantidades
+void mostrarAssuntosUnicos(Processo *vetor, int tamanho);
 
-// 5. Função para listar processos com múltiplos assuntos
-void listar_processos_multiplos_assuntos(Processo *lista, int tamanho);
+// Exibe processos que possuem mais de um assunto
+void exibirProcessosMultiplosAssuntos(Processo *lista, int tamanho);
 
-// 6. Função para calcular dias em tramitação
-void dias_em_tramitacao(Processo *processos, int tamanho);
+// Calcula e exibe o tempo de tramitação de cada processo
+void calcularTempoTramitacao(Processo *processos, int tamanho);
 
-// Função auxiliar para salvar em CSV
-void salvar_csv(const char *nome_arquivo, Processo *processos, int tamanho);
+// Salva lista de processos em arquivo CSV
+void salvarProcessosEmArquivo(const char *nome_arquivo, Processo *processos, int tamanho);
 
-// Função auxiliar para comparar datas
-int compararDatas(const char *d1, const char *d2);
+// Compara datas de ajuizamento
+int compararDataAjuizamento(const char *d1, const char *d2);
 
 #endif
