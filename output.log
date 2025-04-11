@@ -1,0 +1,13 @@
+Lendo arquivo 'processo_043_202409032338.csv'...
+Arquivo 'processo_043_202409032338.csv' aberto com sucesso.
+Total de processos lidos: 17929
+
+Bem vindo ao sistema!!
+1. Ordenar por ID (crescente)
+2. Ordenar por Data de Ajuizamento (decrescente)
+3. Contar processos por ID de classe
+4. Contar ID Assuntos
+5. Listar processos com múltiplos assuntos
+6. Mostrar dias em tramitação
+0. Sair
+Escolha uma opcao: Obrigado por usar nosso sistema!!
